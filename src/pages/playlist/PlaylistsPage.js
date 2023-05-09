@@ -1,14 +1,8 @@
-import PlaylistNavigation from '../../navigation/PlaylistNavigation'
+import React from 'react'
+import Card from '../../components/Card'
 
 const PlaylistsPage = () => {
-  return (
-    <>
-      <div>
-        <PlaylistNavigation />
-      </div>
-      <div>PlaylistsPage</div>
-    </>
-  )
+  return <Card title={'PlaylistsPage'}>Hello</Card>
 }
 
 export default PlaylistsPage

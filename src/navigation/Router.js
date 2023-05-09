@@ -1,3 +1,4 @@
+import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import * as Pages from '../pages'
 
@@ -12,16 +13,15 @@ const router = createBrowserRouter([
         element: <Pages.HomePage />
       },
       {
-        path: '/playlists',
-        element: <Pages.PlaylistsPage />,
+        path: 'playlists',
         children: [
           {
-            path: 'playlists',
-            index: true,            
+            index: true,
+            element: <Pages.PlaylistsPage />
           },
           {
-            path: '/playlists/createPlaylist',
-            element: <Pages.CreatePlaylist />
+            path: 'new',
+            element: <Pages.CreatePlaylistPage />
           }
         ]
       }
