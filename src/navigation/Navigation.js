@@ -3,8 +3,18 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { useSelector } from 'react-redux'
+import { logOutFB } from '../firebase'
+import { useNavigate } from 'react-router-dom'
 
 function Navigation () {
+  const { user } = useSelector(state => state)
+  const navigate = useNavigate()
+  const onClickLogout = () => {
+    logOutFB()
+    navigate('/')
+  }
+
   return (
     <>
       <Navbar bg='primary' variant='dark'>
@@ -12,12 +22,20 @@ function Navigation () {
           <Navbar.Brand href='#home'>React Course - Playlist</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link href='/'>Home</Nav.Link>
-            {/* <Nav.Link href='playlists'>Playlists</Nav.Link> */}
             <NavDropdown title='Playlists' id='navbarScrollingDropdown'>
               <NavDropdown.Item href='/playlists'>All</NavDropdown.Item>
               <NavDropdown.Item href='/playlists/new'>New</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href='#pricing'>About</Nav.Link>
+            {user.loggedIn && (
+              <Nav.Link href='/profile'>{user.email}</Nav.Link>
+            )}
+            {user.loggedIn ? (
+              <Nav.Link onClick={onClickLogout} href='#'>
+                Log Out
+              </Nav.Link>
+            ) : (
+              <Nav.Link href='/login'>Log In</Nav.Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
@@ -25,37 +43,3 @@ function Navigation () {
   )
 }
 export default Navigation
-
-
-
-
-// const Navigation = () => {
-//   const token = useRouteLoaderData('root')
-//   return (
-//     <header className={classes.header}>
-//       <nav>
-//         <ul className={classes.list}>
-//           <li>
-//             <NavLink
-//               to='/'
-//               className={({ isActive }) =>
-//                 isActive ? classes.active : undefined
-//               }
-//             >
-//               Home
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               to='playlists'
-//               className={({ isActive }) =>
-//                 isActive ? classes.active : undefined
-//               }
-//             >
-//               Playlist
-//             </NavLink>
-//           </li>
-//         </ul>
-//       </nav>
-//     </header>
-//   )

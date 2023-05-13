@@ -4,9 +4,9 @@ import Card from 'react-bootstrap/Card'
 
 export default function (props) {
   return (
-    <Container>
+    <Container style={props.style}>
       {props.title && (
-        <Card.Header as={props.headStyle ? props.headStyle : 'h1'}>
+        <Card.Header style={{marginBottom: 20}} as={props.headStyle ? props.headStyle : 'h1'}>
           {props.title}
         </Card.Header>
       )}
