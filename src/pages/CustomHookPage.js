@@ -47,7 +47,7 @@ const CustomHookPage = () => {
   }
 
   return (
-    <Card title={'Custom Hook - userArray'}>
+    <Card title={'Custom Hook - useArray'}>
       <Form.Label>Enter a valid array with comma separated numbers</Form.Label>
       <Form.Control
         placeholder='comma separated array numbers'
