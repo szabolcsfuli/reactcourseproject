@@ -14,7 +14,7 @@ const CustomHookPage = () => {
   const fn2 = value => {
     return value
       .split(',')
-      .map(item => item.trim())
+      .map(item => item.trim() * 1)
       .sort((a, b) => a - b)
       .join(',')
   }
@@ -22,7 +22,7 @@ const CustomHookPage = () => {
   const fn3 = value => {
     return value
       .split(',')
-      .map(item => item.trim())
+      .map(item => item.trim() * 1)
       .sort((a, b) => b - a)
       .join(',')
   }
