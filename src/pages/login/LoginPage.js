@@ -19,7 +19,13 @@ const LoginPage = () => {
 
   const handleSubmit = fields => {
     const { email, password } = fields
-    const loggedIn = loginFB(email, password)
+    let loggedIn = false
+    try {
+      loggedIn = loginFB(email, password)
+    } catch (e) {
+      console.log(e)
+    }
+
     if (loggedIn) {
       navigate('/playlists')
     }

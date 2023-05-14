@@ -26,9 +26,7 @@ function Navigation () {
               <NavDropdown.Item href='/playlists'>All</NavDropdown.Item>
               <NavDropdown.Item href='/playlists/new'>New</NavDropdown.Item>
             </NavDropdown>
-            {user.loggedIn && (
-              <Nav.Link href='/profile'>{user.email}</Nav.Link>
-            )}
+            <Nav.Link href='/profile'>Profile</Nav.Link>
             {user.loggedIn ? (
               <Nav.Link onClick={onClickLogout} href='#'>
                 Log Out

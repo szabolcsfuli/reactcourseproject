@@ -18,7 +18,7 @@ export async function loginFB (email, password) {
   try {
     await signInWithEmailAndPassword(auth, email, password)
   } catch (e) {
-    console.log(e)
+    throw console.log(e)
   }
 }
 
@@ -26,6 +26,6 @@ export async function logOutFB () {
   try {
     await signOut(auth)
   } catch (e) {
-    console.log(e)
+    throw console.log(e)
   }
 }

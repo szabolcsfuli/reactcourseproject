@@ -4,48 +4,45 @@ import Card from '../components/Card'
 const HomePage = () => {
   return (
     <Card title={'Home page'}>
-      A React egy nyílt forráskódú, deklaratív és hatékony JavaScript könyvtár,
-      amelyet a Facebook fejlesztett ki. A React célja, hogy könnyen kezelhetővé
-      tegye a felhasználói felületek fejlesztését, és lehetővé tegye az
-      újrafelhasználható komponensek használatát a kód optimalizálása és
-      karbantarthatósága érdekében. A React használata lehetővé teszi a kód
-      könnyű megértését és bővíthetőségét, valamint javítja az alkalmazás
-      teljesítményét és hatékonyságát.
-      <h3>Hook-ok</h3>
+      React is an open-source, declarative, and efficient JavaScript library for
+      building user interfaces. It was developed by Facebook and aims to make UI
+      development easy, scalable, and maintainable by allowing the use of
+      reusable components. React uses a virtual DOM and a one-way data flow,
+      making it fast and efficient in rendering updates. It has become widely
+      adopted in the industry and is often used in combination with other tools
+      and frameworks to build complex web applications.
+      <h3>Hooks</h3>
       <ul>
         <li>
-          useState(): A React alapvető hookja, amely lehetővé teszi a komponens
-          állapotának tárolását és frissítését.
+          useState(): The basic hook in React that allows you to store and
+          update state in a component.{' '}
         </li>
         <li>
-          useEffect(): Ezzel a hookkal a komponens állapotának változása után
-          futtatni kívánt mellékhatásokat lehet megadni, például a DOM
-          manipulálását, hálózati kérések végrehajtását vagy más külső API-k
-          használatát.
+          useEffect(): This hook allows you to specify side effects that should
+          happen after a component's state has changed, such as manipulating the
+          DOM, making network requests, or using other external APIs.{' '}
         </li>
         <li>
-          useContext(): Ez a hook lehetővé teszi a kontextus használatát a
-          komponensben, így megoszthatjuk az adatokat a komponensek között.
+          useContext(): This hook enables the use of context in a component,
+          allowing you to share data between components.{' '}
         </li>
         <li>
-          useRef(): Ez a hook egy hivatkozást ad vissza egy DOM elemre vagy más
-          értékre, amelyet a komponens életciklusa során megőrizhetünk és
-          módosíthatunk.
+          useRef(): This hook returns a reference to a DOM element or other
+          value that can be preserved and modified across the lifecycle of a
+          component.{' '}
         </li>
         <li>
-          useReducer(): Ez a hook segítségével az alkalmazás állapotát több
-          komponens között is megoszthatjuk és újrahasználhatjuk, miközben az
-          állapotot egyedi akciók segítségével módosítjuk.
+          useReducer(): This hook allows you to share and reuse application
+          state across multiple components, while modifying the state through
+          unique actions.{' '}
         </li>
         <li>
-          useCallback(): Ezzel a hookkal a függvényeket lehet memóriában
-          tartani, hogy ne kelljen azokat újra és újra létrehozni a renderelés
-          során, ami javíthatja az alkalmazás teljesítményét.
+          useCallback(): This hook allows you to memoize functions so that they
+          are not recreated on each render, potentially improving performance.{' '}
         </li>
         <li>
-          useMemo(): Ez a hook lehetővé teszi a memóriában tárolt értékek
-          használatát, amelyek csak akkor számolódnak újra, ha a hozzájuk
-          tartozó függőségek megváltoznak.
+          useMemo(): This hook allows you to use memoized values that are only
+          recomputed when their dependencies change.{' '}
         </li>
       </ul>
     </Card>
