@@ -1,16 +1,12 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import * as Pages from '../pages'
-// import { loader as AuthLoader } from '../pages/RootPage'
-
-// import { useLoaderData, json, defer, Await } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Pages.RootPage />,
     id: 'root',
-    // loader: AuthLoader,
     children: [
       {
         index: true,
@@ -37,9 +33,10 @@ const router = createBrowserRouter([
             element: <Pages.CreatePlaylistPage />
           }
         ]
-      },{
-          path: 'customhook',
-          element: <Pages.CustomHookPage />
+      },
+      {
+        path: 'customhook',
+        element: <Pages.CustomHookPage />
       }
     ]
   }
