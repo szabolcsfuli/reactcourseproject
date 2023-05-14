@@ -1,14 +1,15 @@
 import React from 'react'
 import Card from '../../components/Card'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import * as formik from 'formik'
 import * as yup from 'yup'
 import { useNavigate } from 'react-router-dom'
-import { addPlaylist } from '../../api'
+import { addPlaylistThunk } from '../../api'
 
 const CreatePlaylistPage = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector(state => state)
   const { Formik } = formik
@@ -17,12 +18,15 @@ const CreatePlaylistPage = () => {
     name: yup.string().required()
   })
 
-  const handleSubmit = fields => {
+  const handleSubmit = (fields, { resetForm }) => {
     const { name } = fields
-    addPlaylist({
-      name: name,
-      userUid: user.uid
-    })
+    resetForm()
+    dispatch(
+      addPlaylistThunk({
+        name: name,
+        userUid: user.uid
+      })
+    )
     navigate('/playlists')
   }
 
@@ -53,7 +57,7 @@ const CreatePlaylistPage = () => {
               </Form.Group>
 
               <Button variant='primary' type='submit'>
-                Submit
+                Add
               </Button>
             </Form>
           )}

@@ -16,7 +16,7 @@ export const populateTracksThunk = () => async dispatch => {
   dispatch(populateTracks(data))
 }
 
-export const addPlaylist = async item => {
+export const addPlaylistThunk = item => async dispatch => {
   await fetch(
     'https://reactcourse-b4f01-default-rtdb.europe-west1.firebasedatabase.app/playlists.json',
     {
@@ -27,6 +27,7 @@ export const addPlaylist = async item => {
       }
     }
   )
+  dispatch(populatePlaylistsThunk())
 }
 
 export const addTrackThunk = item => async dispatch => {
@@ -41,4 +42,32 @@ export const addTrackThunk = item => async dispatch => {
     }
   )
   dispatch(populateTracksThunk())
+}
+
+export const removeTrackThunk = trackUid => async dispatch => {
+  await fetch(
+    'https://reactcourse-b4f01-default-rtdb.europe-west1.firebasedatabase.app/tracks/' + trackUid + '.json',
+    {
+      method: 'DELETE',
+      body: '',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }
+  )
+  dispatch(populateTracksThunk())
+}
+
+export const removePlaylistThunk = playlistUid => async dispatch => {
+  await fetch(
+    'https://reactcourse-b4f01-default-rtdb.europe-west1.firebasedatabase.app/playlists/' + playlistUid + '.json',
+    {
+      method: 'DELETE',
+      body: '',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }
+  )
+  dispatch(populatePlaylistsThunk())
 }

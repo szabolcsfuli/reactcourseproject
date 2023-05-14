@@ -15,8 +15,9 @@ const AddTrackPage = props => {
     name: yup.string().required()
   })
 
-  const handleSubmit = fields => {
+  const handleSubmit = (fields, { resetForm }) => {
     const { name } = fields
+    resetForm()
     dispatch(
       addTrackThunk({
         name: name,
@@ -26,7 +27,7 @@ const AddTrackPage = props => {
   }
 
   return (
-    <Card title={''} headStyle={'h6'} style={props.style}>        
+    <Card style={props.style}>
       <Formik
         validationSchema={schema}
         onSubmit={handleSubmit}
