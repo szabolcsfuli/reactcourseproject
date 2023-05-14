@@ -28,7 +28,7 @@ const CustomHookPage = () => {
   }
 
   const {
-    value: value,
+    value,
     processedValue: processedValueCase1,
     valid,
     onChange: onChange1
