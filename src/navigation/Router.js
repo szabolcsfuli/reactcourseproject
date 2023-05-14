@@ -37,6 +37,9 @@ const router = createBrowserRouter([
             element: <Pages.CreatePlaylistPage />
           }
         ]
+      },{
+          path: 'customhook',
+          element: <Pages.CustomHookPage />
       }
     ]
   }

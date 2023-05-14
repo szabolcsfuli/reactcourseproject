@@ -75,7 +75,6 @@ const PlaylistsPage = () => {
                 <Badge pill style={{ marginRight: 20 }}>
                   {countByPlaylist[key] ? countByPlaylist[key] : 0}
                 </Badge>
-                <div></div>
               </Accordion.Header>
               <Accordion.Body>
                 <TrackListPage playlistUid={key} />

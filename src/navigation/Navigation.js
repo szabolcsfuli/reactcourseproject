@@ -26,14 +26,15 @@ function Navigation () {
               <NavDropdown.Item href='/playlists'>All</NavDropdown.Item>
               <NavDropdown.Item href='/playlists/new'>New</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href='/profile'>Profile</Nav.Link>
+            <Nav.Link href='/customhook'>Custom Hook</Nav.Link>
+            <Nav.Link href='/profile'>Profile</Nav.Link>            
             {user.loggedIn ? (
               <Nav.Link onClick={onClickLogout} href='#'>
                 Log Out
               </Nav.Link>
             ) : (
               <Nav.Link href='/login'>Log In</Nav.Link>
-            )}
+            )}            
           </Nav>
         </Container>
       </Navbar>
