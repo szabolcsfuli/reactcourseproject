@@ -8,14 +8,23 @@ const ProfilePage = () => {
     <Card title={'Profile Page'}>
       {user.loggedIn ? (
         <>
-          <p>Logged in</p>
-          <p>{user.email}</p>
+          <p className='h3'>Logged in</p>
+          <p style={styles.userText}>{user.email}</p>
+          <p>
+            User id: <span style={styles.userText}>{user.uid}</span>
+          </p>
         </>
       ) : (
         <>please log in</>
       )}
     </Card>
   )
+}
+
+const styles = {
+  userText: {
+    fontWeight: 'bold'
+  }
 }
 
 export default ProfilePage

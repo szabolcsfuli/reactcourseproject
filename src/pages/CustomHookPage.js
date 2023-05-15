@@ -87,11 +87,17 @@ const ProcessedValueItem = props => {
   return (
     <>
       <p className='h5'>{props.title}</p>
-      <p className='h6' style={{ color: props.valid ? 'green' : 'red' }}>
+      <p className='h6' style={styles(props).valueItem}>
         {props.children}
       </p>
     </>
   )
 }
+
+const styles = props => ({
+  valueItem: {
+    color: props.valid ? 'green' : 'red'
+  }
+})
 
 export default CustomHookPage

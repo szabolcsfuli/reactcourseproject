@@ -19,7 +19,7 @@ function Navigation () {
     <>
       <Navbar bg='primary' variant='dark'>
         <Container>
-          <Navbar.Brand href='#home'>React Course - Playlist</Navbar.Brand>
+          <Navbar.Brand href='/'>React Course - Playlist</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link href='/'>Home</Nav.Link>
             <NavDropdown title='Playlists' id='navbarScrollingDropdown'>
